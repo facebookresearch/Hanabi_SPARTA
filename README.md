@@ -51,7 +51,7 @@ cd Hanabi_SPARTA
 4. Install the library
 ```bash
 # CPU only: heuristica agents only; does not support SAD agents/blueprints
-python setup.py install  
+python setup.py install
 
 # GPU enabled: supports heuristic *and* SAD agents/blueprints
 INSTALL_TORCHBOT=1 python setup.py install
@@ -69,7 +69,7 @@ docker build -t hanabi .
 Then run the image, in either a GPU or CPU context:
 
 ```bash
-# with GPU: 
+# with GPU:
 
 nvidia-docker run -it --rm --runtime=nvidia hanabi bash
 
@@ -87,10 +87,10 @@ docker run -it --rm hanabi bash
 python eval_bot.py SmartBot --games 1000
 
 # evaluate SAD for two players (1000 games)
-GREEDY_ACTION=1 TORCHBOT_MODEL=models/sad_player2.pth python eval_bot.py SmartBot --games 1000
+GREEDY_ACTION=1 TORCHBOT_MODEL=models/sad_player2.pth python eval_bot.py TorchBot --games 1000
 
 # evaluate SAD for three players (1000 games)
-GREEDY_ACTION=1 TORCHBOT_MODEL=models/sad_player3.pth python eval_bot.py SmartBot --games 1000 --players 3
+GREEDY_ACTION=1 TORCHBOT_MODEL=models/sad_player3.pth python eval_bot.py TorchBot --games 1000 --players 3
 
 # evaluate single-agent search with SmartBot blueprint
 BPBOT=SmartBot python eval_bot.py SearchBot --games 10
