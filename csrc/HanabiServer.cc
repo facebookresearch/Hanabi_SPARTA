@@ -297,6 +297,8 @@ int Server::runToCompletion() {
     observingPlayer_ = activePlayer_;
     movesFromActivePlayer_ = 0;
     players_[activePlayer_]->pleaseMakeMove(*this);  /* make a move */
+    // added this short-circuit in case you forcibly end the game, toa void asserts and waiting
+    if (this->gameOver()) break;
     HANABI_SERVER_ASSERT(movesFromActivePlayer_ != 0, "bot failed to respond to pleaseMove()");
     assert(movesFromActivePlayer_ == 1);
     movesFromActivePlayer_ = -1;

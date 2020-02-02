@@ -38,6 +38,7 @@ struct PyBot : public Hanabi::Bot {
 
   void pleaseMakeMove(Hanabi::Server &server) override {
     wakeUp();
+    if (server.gameOver()) return;
     assert(my_next_move_.type != INVALID_MOVE);
     execute_(server.whoAmI(), my_next_move_, server);
     my_next_move_ = Move();

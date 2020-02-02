@@ -49,9 +49,6 @@ std::tuple<std::shared_ptr<Server>, PyBot*, std::thread> start_game(std::string 
 void end_game(Server &server, PyBot *bot, std::thread &t) {
   while (!server.gameOver()) {
     server.endGameByBombingOut();
-    if (server.activePlayer() == server.whoAmI()) {
-      bot->setMove(Move(PLAY_CARD, 0));
-    }
     bot->wait();
   }
   getThreadPool().close();
