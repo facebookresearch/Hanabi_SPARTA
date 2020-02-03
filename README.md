@@ -14,8 +14,8 @@ Code for training the Simplified Action Decoder (SAD), which achieves state-of-t
 To reference this work, please use:
 
 ```tex
-@inproceedings{lerer2020search,
-  title={{Search in Cooperative Partially-Observable Games}},
+@inproceedings{lerer2020improving,
+  title={Improving Policies via Search in Cooperative Partially Observable Games},
   author={Lerer, Adam and Hu, Hengyuan and Foerster, Jakob and Brown, Noam},
   booktitle={AAAI Conference on Artificial Intelligence},
   year={2020},
